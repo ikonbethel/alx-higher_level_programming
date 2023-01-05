@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 
 """Print the numbers from 1 to 100 separated by a space.
