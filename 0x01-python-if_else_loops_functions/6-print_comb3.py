@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 
 for digit1 in range(0, 10):
