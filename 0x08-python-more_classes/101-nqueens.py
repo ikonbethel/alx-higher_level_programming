@@ -1,60 +1,82 @@
 #!/usr/bin/python3
+""" N queens """
 import sys
 
 
-def nqueens(columns, rows):
-    """begins nqueens adding new y digit for each x digit"""
-    solutions = [[]]
-    for x in range(columns):
-        solutions = add_queens(x, rows, solutions)
-    return solutions
+if len(sys.argv) != 2:
+    print("Usage: nqueens N")
+    sys.exit(1)
+try:
+    N = int(sys.argv[1])
+except ValueError:
+    print("N must be a number")
+    sys.exit(1)
+if N < 4:
+    print("N must be at least 4")
+    sys.exit(1)
 
 
-def add_queens(x, rows, prev_solutions):
-    """ adds one queen of y digit if it is safe for every solution """
-    new_solutions = []
-    for arrangement in prev_solutions:
-        for y in range(rows):
-            if is_safe(x, y, arrangement):
-                new_solutions.append(arrangement + [y])
-    return new_solutions
+def check(board, row, col):
+    """ check the cells in the board.
+        Args:
+            board: (list) chess board.
+            row: (int) current row index.
+            col: (int) current col index.
+        Return:
+            (bool) True if it's a valid position,
+                   False if doesn't.
+    """
+    for i in range(col):
+        if board[row][i] == 1:
+            return False
+    for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
+        if board[i][j] == 1:
+            return False
+    for i, j in zip(range(row, N, 1), range(col, -1, -1)):
+        if board[i][j] == 1:
+            return False
+    return True
 
 
-def is_safe(x, y, arrangement):
-    """checks if queen is unique and not on a diagonal"""
-    if y in arrangement:
-        return (False)
-    else:
-        return all(abs(arrangement[col] - y) != x - col
-                   for col in range(x))
+def recursion(board, col):
+    """ Perfome the recursion.
+        Args:
+            board: (list) chess board.
+            col: (int) current col index.
+        Returns:
+            (bool) True of False.
+    """
+
+    if col >= N:
+        result = []
+        for i in range(N):
+            for j in range(N):
+                if board[i][j] == 1:
+                    result.append([i, j])
+
+        if result != []:
+            print(result)
+
+    for i in range(N):
+        if check(board, i, col):
+            board[i][col] = 1
+            if recursion(board, col + 1) is True:
+                return True
+            board[i][col] = 0
+    return False
 
 
-def check_edge_cases():
-    """checks edge based on nqueens input"""
-    if len(sys.argv) != 2:
-        print('Usage: nqueens N')
-        sys.exit(1)
-    if sys.argv[1].isdigit():
-        n = int(sys.argv[1])
-    else:
-        print('N must be a number')
-        sys.exit(1)
-    if n < 4:
-        print('N must be at least 4')
-        sys.exit(1)
-    return(n)
+def solve():
+    """ intial function to solve the problem.
+        Args:
+            None.
+        Returns:
+            None.
+    """
+    board = [[0 for i in range(N)] for j in range(N)]
+
+    r = recursion(board, 0)
 
 
-def initiate_nqueens():
-    """initiates nqueens checking for edge cases, then builds chess board"""
-    n = check_edge_cases()
-    solutions = nqueens(n, n)
-    for arrangement in solutions:
-        formatted = []
-        for x, y in enumerate(arrangement):
-            formatted.append([x, y])
-        print(formatted)
-
-if __name__ == '__main__':
-    """MAIN APP"""
-    initiate_nqueens()
+if __name__ == "__main__":
+    solve()
