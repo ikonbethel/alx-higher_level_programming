@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Convert a argument to an int
+// Converting a argument to an int
 
 if (isNaN(process.argv[2])) {
   console.log('Not a number');
