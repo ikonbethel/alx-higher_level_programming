@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Convert a argument to an int
+// Converting an argument to an int
 
 if (process.argv.length <= 3) {
   console.log(0);
