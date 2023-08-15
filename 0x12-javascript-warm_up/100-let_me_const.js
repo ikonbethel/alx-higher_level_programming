@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Print Javascript is amazing
+// Prinit Javascript is amazing
 
 myVar = 333;
 
