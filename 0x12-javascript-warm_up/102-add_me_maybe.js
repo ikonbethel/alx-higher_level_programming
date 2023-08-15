@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Print Javascript is amazing
+// Printing Javascript is amazing
 
 function addMeMaybe (x, fun) {
   fun(x + 1);
