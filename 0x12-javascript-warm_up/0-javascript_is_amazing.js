@@ -1,3 +1,3 @@
 #!/usr/bin/node
-// Print Javascript is amazing
+// Printing Javascript is amazing
 console.log('Javascript is amazing');
