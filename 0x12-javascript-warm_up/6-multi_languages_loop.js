@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Print C is fun, Python is cool, Javascript is amazing
+// Printing C is fun, Python is cool, Javascript is amazing
 
 const phrases = ['C is fun', 'Python is cool', 'Javascript is amazing'];
 
