@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Factorial in Javascript
+// Factorials in Javascript
 
 function factorial (num) {
   if (isNaN(num) || num < 2) {
