@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Print Javascript is amazing
+// Printing Javascript is amazing
 
 if (process.argv[2] === undefined) {
   console.log('No argument');
