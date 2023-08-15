@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Print Javascript is amazing
+// Printing Javascript is amazing
 
 function add (a, b) {
   if (isNaN(a) || isNaN(b)) {
