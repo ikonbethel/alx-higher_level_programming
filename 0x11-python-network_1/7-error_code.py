@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-# Display header X-Request-Id
+# Display header X-Request-Id.
 import requests
 import sys
-
 
 if __name__ == "__main__":
 
