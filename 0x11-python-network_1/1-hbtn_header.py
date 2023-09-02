@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Display header X-Request-Id
+# Display header X-Request-Id.
 import urllib.request
 import sys
 
