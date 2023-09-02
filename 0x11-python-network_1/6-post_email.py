@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-# Display the status
+# Display the status.
 import requests
 import sys
-
 
 if __name__ == "__main__":
 
