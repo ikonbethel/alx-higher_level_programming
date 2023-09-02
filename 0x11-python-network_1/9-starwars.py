@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-# Star wars API
+# Star wars API.
 import requests
 import sys
-
 
 if __name__ == "__main__":
 
