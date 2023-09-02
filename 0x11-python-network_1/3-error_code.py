@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Display error
+# Display error.
 import urllib.request
 import sys
 
