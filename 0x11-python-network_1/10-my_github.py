@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Star wars API
+# Star wars API.
 import requests
 import sys
 
