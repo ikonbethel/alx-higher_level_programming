@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def print_list_integer(my_list=[]):
     for num in my_list:
-        print("{%s} /n".format(num))
+        print("{:i} /n".format(num))
