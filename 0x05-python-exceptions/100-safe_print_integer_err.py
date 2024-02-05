@@ -11,5 +11,3 @@ def safe_print_integer_err(value):
         sys.stderr.write(ex.args[0])
         sys.stderr.write("\n")
         return False
-
-     
