@@ -1,11 +1,14 @@
 #!/usr/bin/python3
+"""Define square size"""
 
-"""
-This module defines a suqare based on task 0 (0-square.py)
-"""
 
 class Square:
-    """ Square class """
+    """An empty class that defines a Square."""
+
     def __init__(self, size):
-        """ Class initialization """
+        """Instantiation method
+
+        Args:
+            size (int): Size of square
+        """
         self.__size = size
