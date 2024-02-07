@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+# 0-square.py
+# Popola Risikat
+"""Define a class Square."""
 
-"""This is a function that defines a Square."""
 
 class Square:
-        """This is an empty class that defines a Square"""
-        pass
+    """Represent a square."""
+    pass
