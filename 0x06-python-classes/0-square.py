@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 # 0-square.py
-# Popola Risikat
+# IKONNE BETHEL
 """Define a class Square."""
-
 
 class Square:
     """Represent a square."""
