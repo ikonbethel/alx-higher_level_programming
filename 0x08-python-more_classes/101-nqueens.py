@@ -1,6 +1,11 @@
 #!/usr/bin/python3
-"""Solves the N-queens puzzle"""
-
+"""Solves the N-queens puzzle.
+Determines all possible solutions to placing N
+N non-attacking queens on an NxN chessboard.
+Solutions are represented in the format [[r, c], [r, c], [r, c], [r, c]]
+where `r` and `c` represent the row and column, respectively, where a
+queen must be placed on the chessboard.
+"""
 import sys
 
 
