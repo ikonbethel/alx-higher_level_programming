@@ -9,11 +9,11 @@ save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 filename = "add_item.json"
 
 try:
-    arguments = load_from_json_file(filename)
+        arguments = load_from_json_file(filename)
 except Exception:
-    arguments = []
+        arguments = []
 
 for item in sys.argv[1:]:
-    arguments.append(str(item))
+        arguments.append(str(item))
 
 save_to_json_file(arguments, filename)
