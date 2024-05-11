@@ -1,17 +1,19 @@
 #!/usr/bin/python3
-# Display header X-Request-Id.
-import urllib.request
-import sys
+'''
+    Takes in a URL and an email, sends a POST request
+    to the passed URL with the email as a parameter,
+    and displays the body of the response (decoded in utf-8).
+'''
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
+    import urllib.request as ur
+    import urllib.parse as up
+    from sys import argv
+    url = argv[1]
+    variables = {'email': '{}'.format(argv[2])}
+    datta = up.urlencode(variables).encode('utf-8')
 
-    url = sys.argv[1]
-    email = sys.argv[2]
-    value = {'email': email}
-    data = urllib.parse.urlencode(value)
-    data = data.encode('ascii')
-    req = urllib.request.Request(url, data)
-    with urllib.request.urlopen(req) as response:
-        r = response.read()
-        print(r.decode('utf-8'))
+    with ur.urlopen(url, data=datta) as response:
+        content = response.read()
+        print(content.decode('utf-8'))
