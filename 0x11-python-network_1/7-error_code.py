@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-# Display header X-Request-Id.
-import requests
-import sys
+''' fetches https://alx-intranet.hbtn.io/status using requests'''
 
-if __name__ == "__main__":
 
-    url = sys.argv[1]
-    result = requests.get(url)
-
-    if result.status_code < 400:
-        print(result.text)
+if __name__ == '__main__':
+    import requests
+    from sys import argv
+    url = argv[1]
+    content = requests.get(url)
+    if content.status_code >= 400:
+        print("Error code: {}".format(content.status_code))
     else:
-        print("Error code: {}".format(result.status_code))
+        print(content.text)
