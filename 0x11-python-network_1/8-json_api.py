@@ -1,21 +1,21 @@
 #!/usr/bin/python3
-# Search API
-import requests
-import sys
+''' fetches https://alx-intranet.hbtn.io/status using requests'''
 
-if __name__ == "__main__":
 
-    if len(sys.argv) != 1:
-        letter = sys.argv[1]
-    else:
-        letter = ""
-    value = {'q': letter}
-    result = requests.post("http://0.0.0.0:5000/search_user", data=value)
+if __name__ == '__main__':
+    import requests
+    from sys import argv
+    url = 'http://0.0.0.0:5000/search_user'
     try:
-        if "id" not in result.json() or "name" not in result.json():
+        data = {'q': argv[1]}
+    except IndexError:
+        data = {'q': ''}
+    content = requests.post(url, data=data)
+    try:
+        json_data = content.json()
+        if json_data == {}:
             print("No result")
         else:
-            print("[{}] {}".format(result.json().get('id'),
-                  result.json().get('name')))
-    except:
+            print("[{}] {}".format(json_data.get("id"), json_data.get("name")))
+    except ValueError:
         print("Not a valid JSON")
