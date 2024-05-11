@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-# Display the status.
-import requests
-import sys
+''' fetches https://alx-intranet.hbtn.io/status using requests'''
 
-if __name__ == "__main__":
 
-    url = sys.argv[1]
-    email = sys.argv[2]
-    value = {'email': email}
-    result = requests.post(url, data=value)
-    print(result.text)
+if __name__ == '__main__':
+    import requests
+    from sys import argv
+    url = argv[1]
+    data = {'email': argv[2]}
+    content = requests.post(url, data=data)
+    print(content.text)
